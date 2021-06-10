@@ -74,36 +74,3 @@ render() {
 }
 
 export default App;
-
-class App extends Component {
-    constructor() {
-      super();
-      this.state = {
-        activePlace: 0,
-    };
-}
-render() {
-    const activePlace = this.state.activePlace;
-    return (
-      <div className="App">       
-     
-        {PLACES.map((place, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              this.setState({ activePlace: index });
-            }} >
-              {place}
-          </button>
-        ))}
-
-        <WeatherBlock
-          key={activePlace}
-          name={PLACES[activePlace]} />
-      </div>
-      
-    );
-  }
-}
-
-export default App;
